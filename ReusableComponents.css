@@ -1,0 +1,72 @@
+/* Buy and sell buttons*/
+.button,
+.buy-sell-button,
+.search-bar button {
+  background-color: #FF8351;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.button:hover,
+.buy-sell-button:hover,
+.search-bar button:hover {
+  background-color: #e6733f;
+}
+.buy-sell-button:hover {
+  background-color: #E65C00; 
+}
+
+/* BOOK LISTING CARD (Seller/Buyer Pages)*/
+.book-card {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+  color: #000000;
+}
+
+/* Book Details, Confirmations*/
+.modal {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  max-width: 600px;
+  margin: auto;
+  color: #000000;
+}
+
+/*  SEARCH BAR (Top Navigation Section)*/
+.search-bar {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.search-bar input[type="text"] {
+  flex: 1;
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+
+
+/* Profile icons*/
+.profile-icon {
+  width: 80px;
+  height: 80px;
+  background-color: #000000;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0.5rem;
+}

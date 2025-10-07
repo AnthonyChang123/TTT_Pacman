@@ -1,0 +1,80 @@
+/* page set up and map*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica', sans-serif;
+  background-color: #003748; 
+  color: #000000; 
+  line-height: 1.6;
+}
+
+/* heading and styles of Text*/
+h1, h2, h3, h4 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+/* Link style*/
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Button styele*/
+.button {
+  background-color: #FF6600; 
+  color: #FFFFFF;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: #E65C00;
+}
+/* Selcts and Inputs, textarea*/
+input, select, textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  background-color: #FFFFFF;
+  color: #000000;
+}
+/* Utility classes(boxes framework*/
+.rounded-box {
+ background-color: #FFFFFF;
+  border: 2px solid #FF8351;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.center {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.flex-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
