@@ -1,0 +1,9 @@
+This file is intended to be used for notes/pre-status report throughout the project.
+
+10/12/2025:
+
+    - Initial templates created (CSS files, header/footer.php files)
+    - LoginPage.php created (low fidelity)
+    - Object Oriented Programming website. Logical components (controllers, models)
+      UserController: Handles user-related operations (login, logout, registration, profile updates).
+      UserModel: Responsible for communicating with the database (CRUD for users).
