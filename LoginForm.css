@@ -1,0 +1,17 @@
+.form_box {
+  width: 350px;                  /* set box width */
+  margin: 100px auto;            /* center it horizontally with some space from top */
+  padding: 30px;                 /* inner spacing */
+  background-color: #FF6600;   /* soft background color */
+  color: #FFFFFF;
+  border: 2px solid #ccc;        /* light border */
+  border-radius: 12px;           /* rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* subtle shadow for depth */
+  text-align: center;            /* center text inside */
+  font-family: 'Helvetica', sans-serif;
+}
+
+.TitleLogin{
+    font-size: larger;
+    margin: 20px;
+}
