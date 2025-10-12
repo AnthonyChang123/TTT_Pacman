@@ -4,9 +4,12 @@ Anthony 10/12/2025:
 
     - Initial templates created (CSS files, header/footer.php files)
     - LoginPage.php created (low fidelity)
-    - Object Oriented Programming website. Backend Logical components (controllers, models) 
+    Need to look into and start Object Oriented Programming for websites. Backend Logical components (controllers, models) 
     Examples:
       UserController: Handles user-related operations (login, logout, registration, profile updates).
       UserModel: Responsible for communicating with the database (CRUD for users).
+
+Things to do:
+    - 
 
     
