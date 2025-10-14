@@ -5,11 +5,11 @@ Identified Pages:
 
     Home (Homepage.php)
     Sign up
-    Login (LoginPage.php)
-    Forgot Password
-    Seller page
-    Buyer page
-    Account page
+    Login (LoginPage.php) - Anthony
+    Forgot Password 
+    Seller page 
+    Buyer page 
+    Account page 
 
     Book selection?
     Buyer Bottons?
