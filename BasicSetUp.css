@@ -78,3 +78,207 @@ input, select, textarea {
   gap: 1rem;
   flex-wrap: wrap;
 }
+
+/*Sign up Page*/
+
+.signup-container {
+    flex: 1;
+  background-color: white; 
+  padding: 10px;
+  max-width: 700px;
+  margin: 10px auto;
+  border-radius: 10px;
+  border: 3px solid #FFA500;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1em;
+  
+}
+.signup-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.signup-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.signup-container input,
+.signup-container select {
+  padding: 10px ;
+  border: 2px solid #FFD8A8;
+  border-radius: 3px;
+  background-color: #FFF3E0; 
+}
+
+.signup-container button {
+  padding: 10px;
+  background-color:  #FF6600;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.signup-container button:hover {
+  background-color: #FF6600;
+}
+
+.note {
+  margin-top: 30px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 0.9em;
+}
+
+
+.note.orange {
+  background-color: #fff4e0;
+  color: #a60;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color:#003748; 
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.split-layout {
+  display: flex;
+  height: 100vh; 
+  width: 100vw;
+}
+.left-panel {
+  flex: 1;
+  background-color: #003748;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.left-panel img {
+  max-height: 160px;
+  width: auto;
+  height: auto;
+}
+
+
+.right-panel {
+  flex: 1;
+  background-color: #FFF3E0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  padding: 0;
+}
+
+.logo-side img {
+  max-height: 800px;
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+.signup-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 40px;
+  border: 10px solid #FFA500; 
+  border-radius: 16px;
+  background-color: #FFF3E0; 
+  max-width: 1300px;
+  margin: 40px auto;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+.login-redirect {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.95em;
+  color: #333;
+}
+
+.login-redirect a {
+  color: #FF6600;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.login-redirect a:hover {
+  text-decoration: underline;
+}
+/* Seller Page*/
+.seller-page {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  background-color: #FFF3E0;
+  border: 4px solid #FFA500;
+  border-radius: 16px;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+.profile-panel, .form-panel {
+  flex: 1;
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.profile-panel h2, .form-panel h2 {
+  color: #003748;
+  margin-bottom: 20px;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 2px solid #FFD8A8;
+  background-color: #FFFFFF;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.button.logout {
+  background-color: #003748;
+}
+
+.button.delete {
+  background-color: #FF3300;
+}
+.image-upload {
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+}
+
+.image-upload img {
+  max-height: 120px;
+  border-radius: 50%;
+  border: 2px solid #FFA500;
+  transition: transform 0.2s ease;
+}
+
+.image-upload:hover img {
+  transform: scale(1.05);
+}
