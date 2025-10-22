@@ -17,7 +17,7 @@
     <nav>
       <a href="HomePage.php">Home</a>
       <a href="#">About</a>
-      <a href="SignUpPage.php">Sign Up</a>
+      <a href="SignUpPage.html">Sign Up</a>
       <a href="LoginPage.php">Login</a>
       <a href="#">Contact</a>
     </nav>
