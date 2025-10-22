@@ -1,20 +1,19 @@
 <?php
     session_start();
 ?>
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>CampusTrade CSS Test</title>
-  <link rel="stylesheet" href="BasicSetUp.css">         <!-- Global styles -->
-  <link rel="stylesheet" href="HeaderNavBar.css">       <!-- Header, nav, layout -->
-  <link rel="stylesheet" href="ReusableComponents.css"> <!-- Buttons, cards, modals -->
+  <link rel="stylesheet" href="CSS/BasicSetUp.css">         
+  <link rel="stylesheet" href="CSS/HeaderNavBar.css">       
+  <link rel="stylesheet" href="CSS/ReusableComponents.css"> 
 </head>
 <body>
-
-  <!-- Header and Navigation -->
   <header>
-    <div class="logo"> <img src="image/campusTradeLogo.png" alt="CampusTrade Logo" width="120">
+    <div class="logo"> <img src="Images/CampusTradeLogo.png" alt="CampusTrade Logo" width="120">
   </div>
     <nav>
       <a href="#">Home</a>
@@ -24,11 +23,15 @@
       <a href="#">Contact</a>
     </nav>
   </header>
+-->
+  <?php
+      include("header.php");
+  ?>
 
   <!-- Main Container -->
 <div class="signup-wrapper">
   <div class="logo-side">
-    <img src="Image/CampusTradeLogo.png" alt="CampusTrade Logo">
+    <img src="Images/CampusTradeLogo.png" alt="CampusTrade Logo">
   </div>
 
     <div class="signup-container">
@@ -79,12 +82,15 @@
   <div class="note orange">Only For Minnstate schools.</div>
 </div>
 
-  
-
   <!-- Footer -->
+   <!--
   <footer>
     &copy; 2025 CampusTrade · All rights reserved
   </footer>
+-->
+  <?php
+    include("footer.php");
+  ?>
 
 </body>
 </html>

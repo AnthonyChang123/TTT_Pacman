@@ -3,8 +3,6 @@ include('header.php');
 
 ?>
 
-<link rel="stylesheet" href="LoginForm.css">
-
 <!-- TODO: Connect this form to a PHP script (e.g., login_process.php) that validates user credentials from the database -->
 <!-- Look into "Front Controller", src folder, entity, http for sessions? -->
 <!-- Design question: Once successful, will the user be navigated to their account page or the home page?-->
