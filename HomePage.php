@@ -3,7 +3,7 @@ include('header.php');
 ?>
 
 <style>
-/* Hero Section with Search */
+/* Section with Search */
 .hero-section {
   background: linear-gradient(135deg, #003748 0%, #005a70 50%, #004d5e 100%);
   padding: 70px 20px 50px;
@@ -76,11 +76,11 @@ include('header.php');
   padding-left: 20px;
 }
 
-.cancel-btn {
-  background-color: #FFFFFF;
-  color: #003748;
-  padding: 14px 28px;
-  border: 2px solid #e0e0e0;
+.search-btn {
+  background: linear-gradient(135deg, #FF8351 0%, #FF6600 100%);
+  color: #FFFFFF;
+  padding: 14px 35px;
+  border: none;
   border-radius: 50px;
   font-weight: bold;
   cursor: pointer;
@@ -88,10 +88,10 @@ include('header.php');
   font-size: 1rem;
 }
 
-.cancel-btn:hover {
-  background-color: #f5f5f5;
-  border-color: #FF8351;
-  color: #FF8351;
+.search-btn:hover {
+  background: linear-gradient(135deg, #e6733f 0%, #E65C00 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 131, 81, 0.4);
 }
 
 /* Buy/Sell Buttons */
@@ -352,7 +352,7 @@ include('header.php');
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive Design */
+/* Design */
 @media (max-width: 1200px) {
   .content-section {
     grid-template-columns: 1fr;
@@ -408,7 +408,7 @@ include('header.php');
     padding: 15px;
   }
 
-  .cancel-btn {
+  .search-btn {
     width: 100%;
   }
 }
@@ -423,7 +423,7 @@ include('header.php');
     <div class="search-container">
       <span class="search-icon">🔍</span>
       <input type="text" placeholder="Search by title, author, ISBN, or course code...">
-      <button class="cancel-btn">Cancel</button>
+      <button class="search-btn">Search</button>
     </div>
 
     <div class="action-buttons">
