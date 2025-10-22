@@ -2,6 +2,8 @@
 include('header.php');
 ?>
 
+<link rel="stylesheet" href="CSS/HomePage.css">
+
 <!-- Section with Search -->
 <div class="hero-section">
   <div class="hero-content">
