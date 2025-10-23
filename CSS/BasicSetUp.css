@@ -220,31 +220,54 @@ body {
 .login-redirect a:hover {
   text-decoration: underline;
 }
-/* Seller Page*/
+/* ===== Seller Page container (beige rectangle) ===== */
 .seller-page {
-  display: flex;
-  gap: 40px;
-  padding: 40px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
   background-color: #FFF3E0;
   border: 4px solid #FFA500;
   border-radius: 16px;
-  max-width: 1200px;
+  padding: 120px 50px 50px;           /* extra top space for top-actions */
+  max-width: 1300px;                 /* bigger rectangle */
   margin: 40px auto;
-}
-
-.profile-panel, .form-panel {
-  flex: 1;
-  background-color: white;
-  padding: 20px;
-  border-radius: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.profile-panel h2, .form-panel h2 {
+/* Top-right action buttons kept INSIDE the beige box */
+.top-actions {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  display: flex;
+  gap: 14px;
+}
+.top-actions .button { 
+  padding: 10px 18px; 
+  border-radius: 8px;
+   font-weight: 600; 
+ font-size: 30px;
+}
+
+/* ===== Inner cards (left & right) ===== */
+.profile-panel,
+.form-panel {
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px ;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  min-height: 560px;
+ 
+}
+
+.profile-panel h2,
+.form-panel h2 {
   color: #003748;
   margin-bottom: 20px;
 }
 
+/* Inputs */
 input, select {
   width: 100%;
   padding: 10px;
@@ -254,34 +277,66 @@ input, select {
   background-color: #FFFFFF;
 }
 
-.button-group {
-  display: flex;
-  gap: 10px;
+/* Buttons */
+.button-group { display: flex; gap: 10px; }
+.button.logout { background-color: #003748; color: #fff; }
+.button.delete { background-color: #FF3300; color: #fff; }
+
+/* ===== Profile avatar uploader ===== */
+.avatar-uploader {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 16px;
 }
 
-.button.logout {
-  background-color: #003748;
-}
-
-.button.delete {
-  background-color: #FF3300;
-}
-.image-upload {
-  display: inline-block;
-  cursor: pointer;
-  text-align: center;
-}
-
-.image-upload img {
-  max-height: 120px;
+.avatar {
+  position: relative;
+  width: 96px;
+  height: 96px;
   border-radius: 50%;
+  background: #FF6600;
   border: 2px solid #FFA500;
-  transition: transform 0.2s ease;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  overflow: hidden;
 }
+.avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.avatar-icon { position: absolute; font-size: 28px; color: #fff; pointer-events: none; opacity: .9; }
+.avatar-uploader small { color: #6b7280; font-size: 12px; }
 
-.image-upload:hover img {
-  transform: scale(1.05);
+/* Book Posted spacing */
+.profile-panel h3 { margin-top: 14px; margin-bottom: 8px; }
+
+/* ===== Book image uploader (orange + circle) ===== */
+.book-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 90px;
 }
+.book-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #FF6600;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 34px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform .2s ease;
+  border: 3px solid #FFA500;
+}
+.book-circle:hover { transform: scale(1.05); }
+.book-hint { font-size: 12px; margin-top: 6px; color: #333; }
+
 
 /* Home Page Styling*/
 
