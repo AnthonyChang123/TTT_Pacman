@@ -1,17 +1,89 @@
-.form_box {
-  width: 350px;                  /* set box width */
-  margin: 100px auto;            /* center it horizontally with some space from top */
-  padding: 30px;                 /* inner spacing */
-  background-color: #FF6600;   /* soft background color */
-  color: #FFFFFF;
-  border: 2px solid #ccc;        /* light border */
-  border-radius: 12px;           /* rounded corners */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* subtle shadow for depth */
-  text-align: center;            /* center text inside */
-  font-family: 'Helvetica', sans-serif;
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  background-color: #003748;
+  padding: 40px 0;
 }
 
-.TitleLogin{
-    font-size: larger;
-    margin: 20px;
+.login-container {
+  background-color: #FFF3E0;
+  border: 3px solid #FF6600;
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.TitleLogin {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #FF6600;
+  margin-bottom: 20px;
+}
+
+/* Input fields */
+.form_box input[type="email"],
+.form_box input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0 16px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* Login Button */
+.form_box .button {
+  width: 100%;
+  background-color: #FF6600;
+  color: #fff3E0;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form_box .button:hover {
+  background-color: #e65500;
+}
+
+/* Links below button */
+.login-links {
+  margin-top: 20px;
+  color: #003748;
+  font-size: 0.95rem;
+}
+
+.login-links a {
+  color: #FF6600;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-links a:hover {
+  text-decoration: underline;
+}
+
+/* Center the login box perfectly on the page */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;  /* adjusts spacing vertically */
+}
+
+/* Optional: add some breathing room for smaller screens */
+@media (max-width: 768px) {
+  main {
+    min-height: 70vh;
+    padding: 20px;
+  }
 }
