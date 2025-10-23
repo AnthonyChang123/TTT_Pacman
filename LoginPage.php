@@ -3,24 +3,36 @@ include('header.php');
 ?>
 
 <main>
-  <!-- One rectangle wrapper -->
-  <div class="login-container">
-    <h2 class="TitleLogin">Login to CampusTrade</h2>
+  <div class="login-wrapper">
+    <div class="login-box">
 
-    <form class="form_box" action="Login_Controller.php" method="POST">
-      <label for="username">MinnState Email</label>
-      <input id="username" name="email" type="email" placeholder="StartID@go.minnstate.edu" required>
+      <!-- Left side: Logo / Image -->
+      <div class="login-logo-side">
+        <img src="Images/CampusTradeLogo.png" alt="CampusTrade Logo">
+      </div>
 
-      <label for="password">Password</label>
-      <input id="password" name="password" type="password" placeholder="Enter your password" required>
+      <!-- Right side: Login form -->
+      <div class="login-form-side">
+        <h2 class="TitleLogin">Login to CampusTrade</h2>
 
-      <button type="submit" class="button">Login</button>
-    </form>
+        <form class="form_box" action="Login_Controller.php" method="POST">
+          <label for="username">MinnState Email</label>
+          <input id="username" name="email" type="email" placeholder="StartID@go.minnstate.edu" required>
 
-    <!-- ✅ These links are now inside the same rectangle -->
-    <div class="login-links">
-      <a href="ForgotPassword.php">Forgot Password?</a>
-      <p>Don’t have an account? <a href="SignUpPage.php">Sign up here</a></p>
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" placeholder="Enter your password" required>
+
+          <button type="submit" class="button">Login</button>
+        </form>
+
+        <div class="login-links">
+          <a href="ForgotPassword.php">Forgot Password?</a>
+          <p>Don’t have an account? <a href="SignUpPage.php">Sign up here</a></p>
+        </div>
+
+        <div class="note orange">Only for MinnState schools.</div>
+      </div>
+
     </div>
   </div>
 </main>
@@ -28,3 +40,4 @@ include('header.php');
 <?php
 include('footer.php');
 ?>
+
