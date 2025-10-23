@@ -1,24 +1,29 @@
 <?php
 include('header.php');
-
 ?>
 
-<!-- TODO: Connect this form to a PHP script (e.g., login_process.php) that validates user credentials from the database -->
-<!-- Look into "Front Controller", src folder, entity, http for sessions? -->
-<!-- Design question: Once successful, will the user be navigated to their account page or the home page?-->
-<!-- PHP Session and handling, need to brush up on this-->
+<main>
+  <!-- One rectangle wrapper -->
+  <div class="login-container">
+    <h2 class="TitleLogin">Login to CampusTrade</h2>
 
-<form class="form_box" action="" method="POST">
-    <div class="TitleLogin"> Login Here </div>
-        <div>Username</div>
-        <input type="text"></input>
-        <div>Password</div>
-        <input type="password"></input>
-        <button type="submit" class="button">Login</button> 
-        <button class="button">Forgot Password</button>
-        <button class="button">Register</button>
-</form>
+    <form class="form_box" action="Login_Controller.php" method="POST">
+      <label for="username">MinnState Email</label>
+      <input id="username" name="email" type="email" placeholder="StartID@go.minnstate.edu" required>
 
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" placeholder="Enter your password" required>
+
+      <button type="submit" class="button">Login</button>
+    </form>
+
+    <!-- ✅ These links are now inside the same rectangle -->
+    <div class="login-links">
+      <a href="ForgotPassword.php">Forgot Password?</a>
+      <p>Don’t have an account? <a href="SignUpPage.php">Sign up here</a></p>
+    </div>
+  </div>
+</main>
 
 <?php
 include('footer.php');
