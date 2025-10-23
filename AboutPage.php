@@ -18,7 +18,7 @@ include('header.php');
         <h2>Our Story</h2>
         <p>
           CampusTrade was created by students for students across the Minnesota State system.
-          It started with a simple idea — make it easier for college students to buy and sell textbooks
+          It started with a simple idea to make it easier for college students to buy and sell textbooks
           directly with one another without overpaying at bookstores or waiting on shipping.
         </p>
         <p>
@@ -30,7 +30,7 @@ include('header.php');
 
         <h2>Marketplace Policy</h2>
         <p>
-          CampusTrade provides a safe platform for students to connect — similar to Facebook Marketplace.
+          CampusTrade provides a safe platform for students to connect similar to Facebook Marketplace.
           <strong>All transactions happen directly between the buyer and seller.</strong>
           CampusTrade does not handle payments or disputes.
         </p>
@@ -51,3 +51,4 @@ include('header.php');
 </main>
 
 <?php include('footer.php'); ?>
+
