@@ -18,8 +18,7 @@ include('header.php');
 
     <div class="action-buttons">
       <button class="buy-sell-btn" onclick="window.location.href='buyer.php'">Buy</button>
-      <button class="buy-sell-btn" onclick="window.location.href='SellerPage.html'">Sell</button>
-  <button class="buy-sell-btn" onclick="window.location.href='SignUpPage.html'">Sign Up</button>
+      <button class="buy-sell-btn" onclick="window.location.href='SellerPage.php'">Sell</button>
 </div>
   </div>
 </div>
