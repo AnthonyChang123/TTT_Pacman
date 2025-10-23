@@ -16,9 +16,9 @@
   </div>
     <nav>
       <a href="HomePage.php">Home</a>
-      <a href="#">About</a>
+      <a href="AboutPage.php">About</a>
       <a href="SignUpPage.php">Sign Up</a>
       <a href="LoginPage.php">Login</a>
-      <a href="#">Contact</a>
+      <a href="ContactPage.php">Contact</a>
     </nav>
   </header>
