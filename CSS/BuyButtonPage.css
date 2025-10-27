@@ -1,0 +1,133 @@
+/* ===== Brand Variables ===== */
+:root{
+  --navH: 130px;            /* adjust if your header height changes */
+  --teal-bg: #073642;
+  --orange: #FF6600;
+  --orange-press: #e65c00;
+  --ink: rgba(255,255,255,0.36);
+}
+
+/* ===== Page section ===== */
+.content-section{
+  display:flex;
+  justify-content:center;              /* center the card */
+  align-items:flex-start;
+  background:var(--teal-bg);
+  padding: calc(var(--navH) + 20px) 0 120px;   /* space from header + bottom */
+  min-height: 100vh;                    /* keep page tall */
+  box-sizing:border-box;
+}
+
+/* ===== Main card ===== */
+.buy-box{
+  position:relative;
+  display:grid;
+  grid-template-columns: 1fr 1fr 320px; /* book | seller | poster */
+  grid-template-areas: "left info poster";
+  gap: 32px;
+
+  width: 1200px;
+  max-width: 92vw;
+
+  background:#FBEEDB;
+  border:6px solid var(--orange);
+  border-radius:14px;
+  box-shadow:0 10px 20px rgba(0,0,0,.16);
+  padding:48px 48px 40px;
+  overflow:hidden;
+}
+
+/* Map areas */
+.buy-left    { grid-area:left; }
+.buy-right   { grid-area:info; }
+.buy-graphic { grid-area:poster; display:flex; align-items:center; justify-content:center; }
+
+/* Titles & text */
+.hero-title{
+  margin:0 0 14px;
+  color:#073642;
+  font-weight:800;
+  font-size:28px;
+}
+.buy-right h2{
+  margin:0 0 12px;
+  font-size:26px;
+  font-weight:800;
+  color:#e66b00;
+}
+
+/* Seller note */
+.note{
+  margin-top:22px;
+  background:#FFF8E9;
+  border-left:6px solid #FF9900;
+  padding:14px 14px;
+  border-radius:8px;
+  font-size:.95rem;
+}
+
+/* Poster image */
+.thankyou-image{
+  width:100%;
+  max-width: 300px;   /* control poster width */
+  height:auto;
+  border-radius:10px;
+  object-fit:contain;
+  background:var(--teal-bg); /* blends if PNG has transparent edges */
+  box-shadow:0 6px 16px rgba(0,0,0,.22);
+    margin-top: 60px; 
+}
+
+/* Top-right buttons inside the card */
+.top-actions-inside{
+  position:absolute;
+  top:14px;
+  right:16px;
+  display:flex;
+  gap:15px;
+  margin-right: 40px;
+  z-index:6;
+}
+.top-actions-inside .button{
+  border:none;
+  border-radius:6px;
+  padding:8px 14px;
+  font-weight:900;
+  cursor:pointer;
+  color:#fff;
+  font-size:.9rem;
+  text-decoration:none;
+}
+.top-actions-inside .switch{ background:var(--orange); }
+.top-actions-inside .switch:hover{ background:var(--orange-press); }
+.top-actions-inside .logout{ background:#113a44; }
+.top-actions-inside .logout:hover{ background:#0c3038; }
+
+/* Links */
+.buy-right a{ color:#e66b00; text-decoration:none; }
+.buy-right a:hover{ text-decoration:underline; }
+
+/* ===== Responsive ===== */
+@media (max-width: 1100px){
+  .buy-box{
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "left info"
+      "poster poster";
+  }
+  .buy-graphic{ justify-content:flex-start; }
+}
+@media (max-width: 720px){
+  .buy-box{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "left"
+      "info"
+      "poster";
+    gap:20px;
+    padding:36px 20px 28px;
+  }
+  .top-actions-inside{ top:10px; right:10px; }
+  .thankyou-image{ max-width: 260px; margin: 6px 0; }
+}
+
