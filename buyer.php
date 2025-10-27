@@ -1,7 +1,7 @@
 <?php
-include('header.php');
-require_once 'config.php'; // create this to connect to your DB (shown below)
 session_start();
+include('header.php');
+require_once 'database.php';
 
 $errors = [];
 
@@ -11,14 +11,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['username'] ?? '');
     $password = $_POST['password'] ?? '';
 
-    // simple validation
+    // basic validation
     if ($name === '' || $email === '' || $username === '' || $password === '') {
         $errors[] = 'All fields are required.';
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errors[] = 'Enter a valid email address.';
     }
 
-    // if no errors so far, check if user exists
+    // check existing user
     if (!$errors) {
         $stmt = $pdo->prepare('SELECT id FROM buyers WHERE email = ? OR username = ?');
         $stmt->execute([$email, $username]);
@@ -40,39 +40,53 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<link rel="stylesheet" href="http://localhost/TTT_Pacman/CSS/LoginForm.css">
+<!-- CSS Files -->
+<link rel="stylesheet" href="CSS/BasicSetUp.css">
+<link rel="stylesheet" href="CSS/HeaderNavBar.css">
+<link rel="stylesheet" href="CSS/ReusableComponents.css">
 
-<div class="form_box" style="max-width:500px;margin:auto;">
-    <h2 class="TitleLogin">Register as Buyer</h2>
+<!-- Main Container -->
+<div class="signup-wrapper" style="display:flex;justify-content:center;align-items:center;padding:40px;gap:40px;background-color:#002b36;">
+  
+  <!-- campus trade logo -->
+  <div class="logo-side" style="flex:1;text-align:center;">
+    <img src="Images/CampusTradeLogo.png" alt="CampusTrade Logo" style="max-width:300px;width:80%;border-radius:12px;">
+    <p style="color:#fff;margin-top:10px;">Join CampusTrade as a Buyer</p>
+  </div>
+
+  <!-- form -->
+  <div class="signup-container" style="background-color:#fff8ee;border:3px solid #ff7b32;border-radius:16px;padding:30px;flex:1;max-width:500px;">
+    <h2 style="text-align:center;color:#ff7b32;">Register as Buyer</h2>
 
     <?php if ($errors): ?>
-        <div style="color:red;">
-            <ul>
-                <?php foreach ($errors as $e): ?>
-                    <li><?= htmlspecialchars($e) ?></li>
-                <?php endforeach; ?>
-            </ul>
-        </div>
+      <div style="background:#ffeaea;color:#b00020;padding:10px;border-radius:8px;margin-bottom:15px;">
+        <ul style="margin:0 0 0 20px;">
+          <?php foreach ($errors as $e): ?>
+            <li><?= htmlspecialchars($e) ?></li>
+          <?php endforeach; ?>
+        </ul>
+      </div>
     <?php endif; ?>
 
-    <form method="POST" action="">
-        <label>Name</label>
-        <input type="text" name="name" required>
+    <form method="POST" action="" style="display:flex;flex-direction:column;gap:12px;">
+      <label for="name">Full Name</label>
+      <input id="name" type="text" name="name" required>
 
-        <label>Email</label>
-        <input type="email" name="email" required>
+      <label for="email">Email</label>
+      <input id="email" type="email" name="email" required>
 
-        <label>Username</label>
-        <input type="text" name="username" required>
+      <label for="username">Username</label>
+      <input id="username" type="text" name="username" required>
 
-        <label>Password</label>
-        <input type="password" name="password" required>
+      <label for="password">Password</label>
+      <input id="password" type="password" name="password" placeholder="6 characters minimum" required>
 
-        <button type="submit" class="button">Register</button>
-        <a href="login.php" class="button">Back to Login</a>
+      <button type="submit" class="button" style="background-color:#ff7b32;border:none;">Register</button>
+      <a href="login.php" class="button" style="background-color:#002b36;color:#fff;text-align:center;text-decoration:none;">Back to Login</a>
     </form>
+
+    <div class="note orange" style="margin-top:12px;text-align:center;">Buyers can browse listings and contact sellers.</div>
+  </div>
 </div>
 
-<?php
-include('footer.php');
-?>
+<?php include('footer.php'); ?>
