@@ -75,7 +75,7 @@
   <button type="submit" name="submit">Sign Up</button>
 </form>
 <div class="login-redirect">
-  Already have an account? <a href="LoginPage.html">Log in here</a>
+  Already have an account? <a href="LoginPage.php">Log in here</a>
 </div>
 
   
