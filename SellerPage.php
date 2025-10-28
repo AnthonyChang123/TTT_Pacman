@@ -14,7 +14,7 @@ include('header.php');
 
       <!-- Top Actions -->
       <div class="top-actions">
-        <button class="button" type="button" onclick="window.location.href='buyer.php'">Switch to Buyer</button>
+        <button class="button" type="button" onclick="window.location.href='buyerpage.php'">Switch to Buyer</button>
         <button class="button logout" type="button">Log Out</button>
       </div>
 
