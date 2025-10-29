@@ -9,7 +9,11 @@ include('header.php');
       <!-- top-right buttons INSIDE the card -->
       <div class="top-actions-inside">
         <a href="SellerPage.php" class="button switch">Switch to Seller</a>
-        <button class="button logout">Log Out</button>
+        
+  <!-- ✅ Inline form for logout -->
+  <form method="post" action="logout.php" style="display:inline;">
+    <button class="button logout" type="submit">LogOut</button>
+  </form>
       </div>
 
       <!-- LEFT: Book details -->
