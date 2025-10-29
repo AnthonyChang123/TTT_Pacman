@@ -1,32 +1,14 @@
 <?php
-    session_start();
+session_start();
+$errors = $_SESSION['flash_errors'] ?? [];
+$success = $_SESSION['flash_success'] ?? null;
+$old = $_SESSION['old'] ?? [];
+unset($_SESSION['flash_errors'], $_SESSION['flash_success'], $_SESSION['old']);
 ?>
-<!--
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>CampusTrade CSS Test</title>
-  <link rel="stylesheet" href="CSS/BasicSetUp.css">         
-  <link rel="stylesheet" href="CSS/HeaderNavBar.css">       
-  <link rel="stylesheet" href="CSS/ReusableComponents.css"> 
-</head>
-<body>
-  <header>
-    <div class="logo"> <img src="Images/CampusTradeLogo.png" alt="CampusTrade Logo" width="120">
-  </div>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Sign Up</a>
-      <a href="#">Login</a>
-      <a href="#">Contact</a>
-    </nav>
-  </header>
--->
-  <?php
-      include("header.php");
-  ?>
+
+<?php
+  include("header.php");
+?>
 
   <!-- Main Container -->
 <div class="signup-wrapper">
@@ -34,8 +16,20 @@
     <img src="Images/CampusTradeLogo.png" alt="CampusTrade Logo">
   </div>
 
-    <div class="signup-container">
+  <div class="signup-container">
   <h2>Create an account</h2>
+
+  <!--Error Handling-->
+<?php if (!empty($errors)): ?>
+  <div class="alert error" role="alert" aria-live="polite">
+    <ul class="alert-list">
+      <?php foreach ($errors as $msg): ?>
+        <li><?= htmlspecialchars($msg) ?></li>
+      <?php endforeach; ?>
+    </ul>
+  </div>
+<?php endif; ?>
+
   <form action="SignUp_Controller.php" method="POST">
   <label for="firstName">First Name</label>
   <input id="firstName" name="firstName" type="text" required>
@@ -75,19 +69,13 @@
   <button type="submit" name="submit">Sign Up</button>
 </form>
 <div class="login-redirect">
-  Already have an account? <a href="LoginPage.html">Log in here</a>
+  Already have an account? <a href="LoginPage.php">Log in here</a>
 </div>
 
   
   <div class="note orange">Only For Minnstate schools.</div>
 </div>
 
-  <!-- Footer -->
-   <!--
-  <footer>
-    &copy; 2025 CampusTrade · All rights reserved
-  </footer>
--->
   <?php
     include("footer.php");
   ?>
