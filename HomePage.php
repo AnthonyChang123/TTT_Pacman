@@ -17,7 +17,7 @@ include('header.php');
     </div>
 
     <div class="action-buttons">
-      <button class="buy-sell-btn" onclick="window.location.href='buyer.php'">Buy</button>
+      <button class="buy-sell-btn" onclick="window.location.href='buyerpage.php'">Buy</button>
       <button class="buy-sell-btn" onclick="window.location.href='SellerPage.php'">Sell</button>
 </div>
   </div>
@@ -111,7 +111,7 @@ include('header.php');
       </div>
     </div>
     <div class="browse-more">
-      <button class="browse-btn" onclick="window.location.href='buyer.php'">Browse All Books</button>
+      <button class="browse-btn" onclick="window.location.href='buyerpage.php'">Browse All Books</button>
     </div>
   </div>
 </div>
