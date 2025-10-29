@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="CSS/HeaderNavBar.css">       <!-- Header, nav, layout -->
   <link rel="stylesheet" href="CSS/ReusableComponents.css"> <!-- Buttons, cards, modals -->
   <link rel="stylesheet" href="CSS/LoginForm.css">
+  <link rel="stylesheet" href="CSS/BuyButtonPage.css">
+
 </head>
 <body>
 
@@ -20,5 +22,8 @@
       <a href="SignUpPage.php">Sign Up</a>
       <a href="LoginPage.php">Login</a>
       <a href="ContactPage.php">Contact</a>
+       <?php if (isset($_SESSION['user_id'])): ?>
+    <a href="logout.php">Logout</a>
+  <?php endif; ?>
     </nav>
   </header>
