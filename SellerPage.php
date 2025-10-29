@@ -14,15 +14,20 @@ include('header.php');
 
       <!-- Top Actions -->
       <div class="top-actions">
-        <button class="button" type="button" onclick="window.location.href='buyerpage.php'">Switch to Buyer</button>
-        <button class="button logout" type="button">Log Out</button>
-      </div>
+        <button class="button" type="button" onclick="window.location.href='buyer.php'">Switch to Buyer</button>
+
+  <!-- ✅ Inline form for logout -->
+  <form method="post" action="logout.php" style="display:inline;">
+    <button class="button logout" type="submit">LogOut</button>
+  </form>
+</div>
+
 
       <!-- LEFT: Profile Panel -->
       <div class="profile-panel">
         <h2>Your Profile</h2>
 
-        <form method="post" enctype="multipart/form-data" action="#">
+        <form method="post" enctype="multipart/form-data" action="Seller_Controller.php">
           <!-- Profile image upload -->
           <div class="avatar-uploader">
             <input id="avatarInput" name="avatar" type="file" accept="image/*" hidden>
@@ -50,21 +55,22 @@ include('header.php');
             <option>Zelle</option>
           </select>
 
-          <button class="button" type="button">Edit</button>
+          <button class="button" type="Submit" name="edit_profile">Edit</button>
         </form>
 
         <h3>Book Posted</h3>
         <select name="postedBook">
           <option>Select Book</option>
         </select>
-        <button class="button delete" type="button">Delete Book</button>
+        <form method="post" action="Seller_Controller.php">
+        <button class="button delete" type="submit">Delete Book</button>
       </div>
 
       <!-- RIGHT: Post a Book -->
       <div class="form-panel">
         <h2>Post a Book</h2>
 
-        <form method="post" enctype="multipart/form-data" action="#">
+        <form method="post" enctype="multipart/form-data" action="Seller_Controller.php">
           <div class="book-upload">
             <input id="bookUpload" name="bookImage" type="file" accept="image/*" hidden>
             <label for="bookUpload" class="book-circle" aria-label="Upload book image">
@@ -85,9 +91,9 @@ include('header.php');
           <input type="email" name="contact" placeholder="Contact Info">
 
           <div class="button-group">
-            <button class="button" type="button">Save</button>
-            <button class="button" type="button">Edit</button>
-            <button class="button" type="button">Post Book</button>
+            <button class="button" type="submit">Save</button>
+            <button class="button" type="submit">Edit</button>
+            <button class="button" type="submit">Post Book</button>
           </div>
         </form>
       </div>
