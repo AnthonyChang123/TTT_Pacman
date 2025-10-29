@@ -16,7 +16,11 @@ include('header.php');
 <!-- Top Buttons -->
 <div class="top-actions" style="display:flex;justify-content:flex-end;gap:10px;margin-bottom:10px;">
   <button class="button" type="button" onclick="window.location.href='SellerPage.php'">Switch to Seller</button>
-  <button class="button logout" type="button" onclick="window.location.href='logout.php'">Log Out</button>
+ 
+  <!-- ✅ Inline form for logout -->
+  <form method="post" action="logout.php" style="display:inline;">
+    <button class="button logout" type="submit">LogOut</button>
+  </form>
 </div>
 
 <!-- Search bar  -->
