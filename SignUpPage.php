@@ -45,19 +45,15 @@ unset($_SESSION['flash_errors'], $_SESSION['flash_success'], $_SESSION['old']);
 
   <label for="major">Major</label>
   <input id="major" name="major" type="text" required>
-
+    
+    <label for="State/city"> state/city</label>
+   <input type="text" name="location" placeholder="State/City">
+    
   <label for="role">Role</label>
   <select id="role" name="role" required>
     <option value="" disabled selected>Student or Alumni</option>
     <option value="student">Student</option>
     <option value="alumni">Alumni</option>
-  </select>
-
-  <label for="market">Marketplace Role</label>
-  <select id="market" name="market" required>
-    <option value="" disabled selected>Seller or Buyer</option>
-    <option value="seller">Seller</option>
-    <option value="buyer">Buyer</option>
   </select>
 
   <label for="password">Password</label>
