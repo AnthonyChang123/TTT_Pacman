@@ -1,13 +1,10 @@
 <?php
+  include("header.php");
 session_start();
 $errors = $_SESSION['flash_errors'] ?? [];
 $success = $_SESSION['flash_success'] ?? null;
 $old = $_SESSION['old'] ?? [];
 unset($_SESSION['flash_errors'], $_SESSION['flash_success'], $_SESSION['old']);
-?>
-
-<?php
-  include("header.php");
 ?>
 
   <!-- Main Container -->

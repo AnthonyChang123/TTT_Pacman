@@ -63,45 +63,45 @@ class UserModel {
 
     return $stmt->insert_id; // >0 on success
   }
-/*
-    public function FindEmail($email){
 
-        $arr_email = [];
-
-        $sql_emails = "SELECT email FROM Accounts";
-
-        $arr_email.push(sql_emails);
-
-        for($i = 0; $i <= $arr_email.length(); $i++){
-            if($arr_email[$i] == $email){
-                throw new IllegalArgumentException('Email already exists, continue to login page');
-               // return $email;
-            }
-            else{
-                return "Email doesn't exist";
-            }
-        }
-
-    }*/
 
     //This will verify is the email and passowrd are valid by checking the database before login the user into the website.
     public function VerifyUser(string $email, string $password){
-
+    
         $Email = trim($email);
         $pass = trim($password);
-
-        $password_hash = password_hash($pass, PASSWORD_DEFAULT);
-
-        $sql_verify = "SELECT * FROM Accounts WHERE email = $Email && password = $password_hash";
-
-
+        
+    
+       // $password_hash = password_hash($pass, PASSWORD_DEFAULT);
+       //
+    
+        $sql_verify = "SELECT * FROM Accounts WHERE email = ? LIMIT 1";
+    
+        $stmt = $this->db->prepare($sql_verify);
+        if (!$stmt) {
+            throw new RuntimeException('Failed to prepare statement: ' . $this->db->error);
+        }
+        $stmt->bind_param("s", $Email);
+        $stmt->execute();
+    
+        $Existing_email = $stmt->get_result()->fetch_assoc();
+    
+        if (!($Existing_email)) {
+            throw new InvalidArgumentException('Invalid Email');
+        }
+    
+        if (!password_verify($pass, $Existing_email['password'])) {
+            throw new InvalidArgumentException('Invalid password');
+        }
+    
+        return $Existing_email['id'];
     }
-   //Method will update the password in the database.
     public function ChangePassword(string $password){
-
-
+    
+    
     }
- }
+    
+    }
 
 
 ?>

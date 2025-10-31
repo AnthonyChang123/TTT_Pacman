@@ -1,11 +1,19 @@
+
 <?php
 include('header.php');
+session_start();
+
+// Pull flashes (set by your POST handler)
+$errors = $_SESSION['flash_errors'] ?? [];
+$success = $_SESSION['flash_success'] ?? null;
+$old = $_SESSION['old'] ?? [];
+unset($_SESSION['flash_errors'], $_SESSION['flash_success'], $_SESSION['old']);
 ?>
 
 <main>
   <div class="login-wrapper">
     <div class="login-box">
-
+      
       <!-- Left side: Logo / Image -->
       <div class="login-logo-side">
         <img src="Images/CampusTradeLogo.png" alt="CampusTrade Logo">
@@ -14,6 +22,17 @@ include('header.php');
       <!-- Right side: Login form -->
       <div class="login-form-side">
         <h2 class="TitleLogin">Login to CampusTrade</h2>
+      <!--Error Handling-->
+        <?php if (!empty($errors)): ?>
+        <div class="alerts" role="region" aria-label="Errors">
+          <?php foreach ($errors as $msg): ?>
+            <div class="alert alert--error" role="alert" aria-live="polite">
+              <span class="alert__icon" aria-hidden="true">❌</span>
+              <div class="alert__content"><?= htmlspecialchars($msg, ENT_QUOTES, 'UTF-8') ?></div>
+            </div>
+          <?php endforeach; ?>
+        </div>
+      <?php endif; ?>
 
         <form class="form_box" action="Login_Controller.php" method="POST">
           <label for="username">MinnState Email</label>
