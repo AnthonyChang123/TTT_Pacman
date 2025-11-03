@@ -3,11 +3,10 @@ $db = require __DIR__ . '/Database.php';
 require __DIR__ . '/UserModel.php';
 
 $userModel = new UserModel($db);  
-?>
 
-
-<?php
 session_start();
+
+
 
 if (isset($_POST['edit_profile'])) {
   // Handle profile edit

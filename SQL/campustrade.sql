@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 03, 2025 at 04:58 AM
+-- Generation Time: Nov 03, 2025 at 06:24 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -64,6 +64,7 @@ CREATE TABLE `booklistings` (
   `book_state` enum('New','Used') NOT NULL DEFAULT 'New',
   `status` enum('Active','Sold','Archived') NOT NULL DEFAULT 'Active',
   `course_id` varchar(40) DEFAULT NULL,
+  `contact_info` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
