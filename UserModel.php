@@ -17,11 +17,10 @@ class UserModel {
     $last   = trim($data['last_name'] ?? '');
     $school = trim($data['school_name'] ?? '');
     $major  = trim($data['major'] ?? '');
+    $city = trim($data['city'] ?? '');
 
     // Match ENUM casing exactly
     $acad   = (($data['acad_role'] ?? '') === 'Alumni') ? 'Alumni' : 'Student';
-    $market = (($data['market_role'] ?? '') === 'Seller') ? 'Seller' : 'Buyer';
-
     //Verify whether the email is valid, and a minnstate.edu email.
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
       throw new InvalidArgumentException('Bad email');
@@ -51,13 +50,13 @@ class UserModel {
     $hash = password_hash($pass, PASSWORD_DEFAULT);
 
     $sql_user = "INSERT INTO Accounts
-            (email, password, first_name, last_name, school_name, major, acad_role, market_role)
+            (email, password, first_name, last_name, school_name, major, acad_role,city_state)
             VALUES (?,?,?,?,?,?,?,?)";
 
     $stmt = $this->db->prepare($sql_user);
     $stmt->bind_param(
       "ssssssss",
-      $email, $hash, $first, $last, $school, $major, $acad, $market
+      $email, $hash, $first, $last, $school, $major, $acad, $city
     );
     $stmt->execute();
 
@@ -70,10 +69,6 @@ class UserModel {
     
         $Email = trim($email);
         $pass = trim($password);
-        
-    
-       // $password_hash = password_hash($pass, PASSWORD_DEFAULT);
-       //
     
         $sql_verify = "SELECT * FROM Accounts WHERE email = ? LIMIT 1";
     
@@ -96,6 +91,7 @@ class UserModel {
     
         return $Existing_email['id'];
     }
+
     public function ChangePassword(string $password){
     
     

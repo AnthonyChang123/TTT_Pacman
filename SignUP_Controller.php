@@ -23,7 +23,7 @@ $last_name = $_POST['lastName'] ?? '';
 $school_name =$_POST['school'] ?? '';
 $major = $_POST['major'] ?? '';
 $acad_role = $_POST['role'] ?? 'Student';
-$market_role = $_POST['market'] ?? 'Buyer';
+$city = $_POST['location'] ?? '';
 
 
 $confirm_pass = $_POST['confirmPassword'];
@@ -55,7 +55,7 @@ $User_data = [
   'school_name' => $school_name,
   'major'       => $major,
   'acad_role'   => $acad_role,
-  'market_role' => $market_role,
+  'city' => $city,
 ];
 
 try{

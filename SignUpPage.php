@@ -43,8 +43,8 @@ unset($_SESSION['flash_errors'], $_SESSION['flash_success'], $_SESSION['old']);
   <label for="major">Major</label>
   <input id="major" name="major" type="text" required>
     
-    <label for="State/city"> state/city</label>
-   <input type="text" name="location" placeholder="State/City">
+  <label for="State/city"> state/city</label>
+  <input type="text" name="location" placeholder="State/City">
     
   <label for="role">Role</label>
   <select id="role" name="role" required>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 22, 2025 at 07:54 AM
+-- Generation Time: Nov 03, 2025 at 04:58 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -36,7 +36,7 @@ CREATE TABLE `accounts` (
   `school_name` varchar(160) NOT NULL,
   `major` varchar(120) NOT NULL,
   `acad_role` enum('Student','Alumni') NOT NULL,
-  `market_role` enum('Buyer','Seller') NOT NULL,
+  `city_state` varchar(80) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -44,9 +44,9 @@ CREATE TABLE `accounts` (
 -- Dumping data for table `accounts`
 --
 
-INSERT INTO `accounts` (`id`, `email`, `password`, `first_name`, `last_name`, `school_name`, `major`, `acad_role`, `market_role`, `created_at`) VALUES
-(5, 'joabonyabuto@gmail.com', '$2y$10$5DDsL/K2IS.ZqWb5AsCvWO8DnreKg0nPoJtZhvXcibAhIJgx4ILna', 'Joab', 'Nyabuto', 'Metropolitan State University', 'Computer Science', 'Student', 'Buyer', '2025-10-19 19:58:25'),
-(10, 'hk8756oo@go.minnstate.edu', '$2y$10$.03nq3EV1nzdTcy0meBBBuN89XRiNJnpT5a3TQr32v0O08FoS8loW', 'Joab', 'Nyabuto', 'Metropolitan State University', 'Computer Science', 'Student', 'Buyer', '2025-10-20 04:34:36');
+INSERT INTO `accounts` (`id`, `email`, `password`, `first_name`, `last_name`, `school_name`, `major`, `acad_role`, `city_state`, `created_at`) VALUES
+(17, 'qj9341wf@go.minnstate.edu', '$2y$10$fRzUNkaB91wn5ZAqUgTJgetlZlP/zaDpYg1IbgVhBjMR5lGmCK5yC', 'Marthe', 'Lab', 'Metropolitan State University', 'Computer Science', 'Student', '', '2025-10-29 03:51:58'),
+(18, 'hk8756oo@go.minnstate.edu', '$2y$10$gdU7Fq7/YHPw7ESs9NAuXONN.yJN8tSDdiaIEVDT6Ciqo.jZPn5Fm', 'Joab', 'Nyabuto', 'Metropolitan State University', 'Computer Science', 'Student', 'Saint Paul', '2025-11-03 03:49:05');
 
 -- --------------------------------------------------------
 
@@ -58,14 +58,26 @@ CREATE TABLE `booklistings` (
   `id` int(10) UNSIGNED NOT NULL,
   `seller_id` int(10) UNSIGNED NOT NULL,
   `title` varchar(200) NOT NULL,
-  `author` varchar(200) DEFAULT NULL,
   `isbn` varchar(32) DEFAULT NULL,
   `image_path` varchar(500) DEFAULT NULL,
   `price` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `book_state` enum('New','like New','Good','Fair') NOT NULL DEFAULT 'Good',
+  `book_state` enum('New','Used') NOT NULL DEFAULT 'New',
   `status` enum('Active','Sold','Archived') NOT NULL DEFAULT 'Active',
   `course_id` varchar(40) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `userprofile`
+--
+
+CREATE TABLE `userprofile` (
+  `user_id` int(11) NOT NULL,
+  `profile_image` varchar(255) DEFAULT NULL,
+  `preferred_pay` enum('Venmo','PayPal','CashApp','Zelle','Cash') NOT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -87,6 +99,12 @@ ALTER TABLE `booklistings`
   ADD KEY `seller_id` (`seller_id`);
 
 --
+-- Indexes for table `userprofile`
+--
+ALTER TABLE `userprofile`
+  ADD PRIMARY KEY (`user_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -94,7 +112,7 @@ ALTER TABLE `booklistings`
 -- AUTO_INCREMENT for table `accounts`
 --
 ALTER TABLE `accounts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `booklistings`
