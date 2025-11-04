@@ -17,8 +17,8 @@ include('header.php');
     </div>
 
     <div class="action-buttons">
-      <button class="buy-sell-btn" onclick="window.location.href='buyerpage.php'">Buy</button>
-      <button class="buy-sell-btn" onclick="window.location.href='SellerPage.php'">Sell</button>
+      <button class="buy-sell-btn" onclick="window.location.href='SignUpPage.php'">Buy</button>
+      <button class="buy-sell-btn" onclick="window.location.href='SignUpPage.php'">Sell</button>
 </div>
   </div>
 </div>
@@ -64,47 +64,47 @@ include('header.php');
     <h3>Featured Books</h3>
     <p class="subtitle">Recently listed textbooks from students across MinnState campuses</p>
     <div class="book-items">
-      <div class="book-item">
+      <div class="book-item" onclick="window.location.href='BuyButtonPage.php'">
         <div class="book-spine"></div>
         <div class="book-placeholder"></div>
         <div class="bookmark"></div>
       </div>
-      <div class="book-item">
+      <div class="book-item" onclick="window.location.href='BuyButtonPage.php'">
         <div class="book-spine"></div>
         <div class="book-placeholder"></div>
         <div class="bookmark"></div>
       </div>
-      <div class="book-item">
+      <div class="book-item" onclick="window.location.href='BuyButtonPage.php'">
         <div class="book-spine"></div>
         <div class="book-placeholder"></div>
         <div class="bookmark"></div>
       </div>
-      <div class="book-item">
+      <div class="book-item" onclick="window.location.href='BuyButtonPage.php'">
         <div class="book-spine"></div>
         <div class="book-placeholder"></div>
         <div class="bookmark"></div>
       </div>
-      <div class="book-item">
+      <div class="book-item" onclick="window.location.href='BuyButtonPage.php'">
         <div class="book-spine"></div>
         <div class="book-placeholder"></div>
         <div class="bookmark"></div>
       </div>
-      <div class="book-item">
+      <div class="book-item" onclick="window.location.href='BuyButtonPage.php'">
         <div class="book-spine"></div>
         <div class="book-placeholder"></div>
         <div class="bookmark"></div>
       </div>
-      <div class="book-item">
+      <div class="book-item" onclick="window.location.href='BuyButtonPage.php'">
         <div class="book-spine"></div>
         <div class="book-placeholder"></div>
         <div class="bookmark"></div>
       </div>
-      <div class="book-item">
+      <div class="book-item" onclick="window.location.href='BuyButtonPage.php'">
         <div class="book-spine"></div>
         <div class="book-placeholder"></div>
         <div class="bookmark"></div>
       </div>
-      <div class="book-item">
+      <div class="book-item" onclick="window.location.href='BuyButtonPage.php'">
         <div class="book-spine"></div>
         <div class="book-placeholder"></div>
         <div class="bookmark"></div>
