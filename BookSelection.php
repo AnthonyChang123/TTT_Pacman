@@ -70,7 +70,9 @@ include('header.php');
         <p><strong>ISBN:</strong> 9780743273565</p>
         <p><strong>Price:</strong> $12.99</p>
         <div class="actions">
-        <button class="button" type="" name="buy_item">Buy</button>
+       <a href="BuyButtonPage.php">
+       <button class="button" type="button" name="buy_item">Buy</button>
+      </a>
         </div>
       </div>
 
