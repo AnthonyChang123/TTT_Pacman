@@ -22,6 +22,7 @@ unset($_SESSION['flash_errors'], $_SESSION['flash_success'], $_SESSION['old']);
       <!-- Right side: Login form -->
       <div class="login-form-side">
         <h2 class="TitleLogin">Login to CampusTrade</h2>
+        
       <!--Error Handling-->
         <?php if (!empty($errors)): ?>
         <div class="alerts" role="region" aria-label="Errors">
