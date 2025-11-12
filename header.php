@@ -17,12 +17,12 @@
     <div class="logo"> <img src="Images/CampusTradeLogo.png" alt="CampusTrade Logo" width="120">
   </div>
     <nav>
-      <a href="BookSelection.php" style="font-size:12px;">ToBookSelect</a>
+      <a href="BuyButtonPage.php" style="font-size:12px;">ToBuyBook</a>
       <a href="HomePage.php">Home</a>
       <a href="AboutPage.php">About</a>
       <a href="SignUpPage.php">Sign Up</a>
       <a href="LoginPage.php">Login</a>
-      <a href="ContactPage.php">Contact</a>
+      <a href="ContactPage.php">Contact</aS>
        <?php if (isset($_SESSION['user_id'])): ?>
     <a href="logout.php">Logout</a>
   <?php endif; ?>
