@@ -34,11 +34,14 @@ include('header.php');
       <!-- LEFT: Profile Panel -->
       <div class="profile-panel">
         <h2>Your Profile</h2>
+        <?php if (!empty($_GET['profile']) && $_GET['profile'] === 'updated'): ?>
+          <p style="color: green; font-weight: bold; margin-bottom: 10px;"> Changes saved successfully! </p>
+          <?php endif; ?>
 
         <!-- Profile Image Upload -->
         <form method="POST" enctype="multipart/form-data" action="Seller_Controller.php">
           <div class="avatar-uploader">
-            <input id="avatarInput" name="profileImage" type="file" accept="image/*" hidden>
+            <input id="avatarInput" name="profileImage" type="file" accept="image/*" style="display:none;">
             <label for="avatarInput" class="avatar" aria-label="Upload profile picture">
               <img id="avatarPreview"
                    src="<?= htmlspecialchars($vImgSrc) ?>"
@@ -56,7 +59,10 @@ include('header.php');
           <p>Email: <?= htmlspecialchars($vEmail) ?></p>
           <p>Preferred Payment: <?= htmlspecialchars($vPay) ?></p>
 
-          <button class="button" type="submit" name="edit_profile" value="1">Update Profile</button>
+          <!--  <button class="button" type="submit" name="edit_profile" value="1"> Update Profile </button> -->
+          <a class="button" href="EditProfilePage.php?from=seller">Update Profile</a>
+
+
         </form>
 
         <!-- Posted Books -->
@@ -80,7 +86,7 @@ include('header.php');
 
         <form method="post" enctype="multipart/form-data" action="Seller_Controller.php">
           <div class="book-upload">
-            <input id="bookUpload" name="bookImage" type="file" accept="image/*" hidden>
+            <input id="bookUpload" name="bookImage" type="file" accept="image/*" style="display:none;">
             <label for="bookUpload" class="book-circle" aria-label="Upload book image">
               <span class="book-plus">+</span>
               <span class="book-hint">Book Image</span>
@@ -148,45 +154,4 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 </script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  // Profile avatar preview
-  const avatarInput = document.getElementById('avatarInput');
-  const avatarPreview = document.getElementById('avatarPreview');
-
-  if (avatarInput && avatarPreview) {
-    avatarInput.addEventListener('change', (e) => {
-      const file = e.target.files[0];
-      if (!file) return;
-      const reader = new FileReader();
-      reader.onload = (ev) => {
-        avatarPreview.src = ev.target.result;
-      };
-      reader.readAsDataURL(file);
-    });
-  }
-
-  // Book image preview
-  const bookInput   = document.getElementById('bookUpload');
-  const bookPreview = document.getElementById('bookPreview');
-
-  if (bookInput && bookPreview) {
-    bookInput.addEventListener('change', (e) => {
-      const file = e.target.files[0];
-      if (!file) return;
-      const reader = new FileReader();
-      reader.onload = (ev) => {
-        bookPreview.src = ev.target.result;
-        bookPreview.hidden = false;   // just show it under the +
-      };
-      reader.readAsDataURL(file);
-    });
-  }
-
-    });
-
-</script>
-
-
-<?php include('footer.php'); ?>
 

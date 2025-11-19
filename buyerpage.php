@@ -5,6 +5,51 @@ include('header.php');
 // connect to DB (mysqli)
 $db = require __DIR__ . '/Database.php';
 
+// Make sure user is logged in
+if (empty($_SESSION['user_id'])) {
+    header('Location: LoginPage.php');
+    exit;
+}
+
+$userId = (int) $_SESSION['user_id'];
+
+/*
+ * Load the logged-in user's profile (accounts + userprofile)
+ */
+$profileSql = "
+    SELECT 
+        a.first_name,
+        a.last_name,
+        a.school_name,
+        a.major,
+        a.acad_role,
+        a.city_state,
+        a.email,
+        u.profile_image,
+        u.preferred_pay
+    FROM accounts a
+    LEFT JOIN userprofile u ON u.user_id = a.id
+    WHERE a.id = ?
+";
+
+$stmt = $db->prepare($profileSql);
+$stmt->bind_param("i", $userId);
+$stmt->execute();
+$res     = $stmt->get_result();
+$profile = $res->fetch_assoc() ?: [];
+$stmt->close();
+
+// Values for view (with safe fallbacks)
+$vImgSrc    = !empty($profile['profile_image']) ? $profile['profile_image'] : 'Images/ProfileIcon.png';
+$vFirstName = trim(($profile['first_name'] ?? '') . ' ' . ($profile['last_name'] ?? ''));
+$vAcad      = $profile['acad_role']     ?? '';
+$vSchool    = $profile['school_name']   ?? '';
+$vMajor     = $profile['major']         ?? '';
+$vCityState = $profile['city_state']    ?? '';
+$vEmail     = $profile['email']         ?? '';
+$vPay       = $profile['preferred_pay'] ?? 'Cash';
+
+
 /*
  * 1) Load all active book listings with seller info
  *    We use JOIN to get seller name from accounts.
@@ -63,32 +108,36 @@ sort($depts);
         <div class="profile-inner">
 
           <div class="avatar-uploader">
-            <label class="avatar">
-              <img src="images/avatar-placeholder.png" alt="avatar">
-              <span class="avatar-text">Click to upload</span>
-            </label>
-          </div>
+      <label class="avatar">
+        <img
+          src="<?= htmlspecialchars($vImgSrc) ?>"
+          alt="Profile picture"
+        >
+        <span class="avatar-text">Profile picture</span>
+      </label>
+    </div>
 
-          <ul class="profile-info">
-            <li><strong>Name:</strong></li>
-            <li><strong>Status:</strong></li>
-            <li><strong>School:</strong></li>
-            <li><strong>Major:</strong></li>
-            <li><strong>Location:</strong></li>
-            <li><strong>Email:</strong></li>
-            <li><strong>Preferred Payment:</strong></li>
-          </ul>
+    <ul class="profile-info">
+      <li><strong>Name:</strong> <?= htmlspecialchars($vFirstName) ?></li>
+      <li><strong>Status:</strong> <?= htmlspecialchars($vAcad) ?></li>
+      <li><strong>School:</strong> <?= htmlspecialchars($vSchool) ?></li>
+      <li><strong>Major:</strong> <?= htmlspecialchars($vMajor) ?></li>
+      <li><strong>Location:</strong> <?= htmlspecialchars($vCityState) ?></li>
+      <li><strong>Email:</strong> <?= htmlspecialchars($vEmail) ?></li>
+      <li><strong>Preferred Payment:</strong> <?= htmlspecialchars($vPay) ?></li>
+    </ul>
 
-          <!-- Later we can build this page -->
-          <button
-            type="button"
-            class="btn update-profile-btn"
-            onclick="window.location.href='EditProfile.php';"
-          >
-            Update Profile
-          </button>
-        </div>
-      </section>
+    <!-- Send them to the seller/profile page to actually edit -->
+    <button
+      type="button"
+      class="btn update-profile-btn"
+      onclick="window.location.href='EditProfilePage.php';"
+    >
+      Update Profile
+    </button>
+  </div>
+</section>
+
 
       <!-- RIGHT: Search + Filter + Library grid -->
       <section class="library-card">

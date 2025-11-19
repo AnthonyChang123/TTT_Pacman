@@ -123,7 +123,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute();
         $stmt->close();
 
-        header('Location: Seller_Controller.php?posted=1');
+        header('Location: Seller_Controller.php?profile=updated');
         exit;
     }
 
