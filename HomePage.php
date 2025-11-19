@@ -1,5 +1,6 @@
 <?php
 include('header.php');
+
 ?>
 
 <link rel="stylesheet" href="CSS/HomePage.css">
@@ -17,8 +18,8 @@ include('header.php');
     </div>
 
     <div class="action-buttons">
-      <button class="buy-sell-btn" onclick="window.location.href='SignUpPage.php'">Buy</button>
-      <button class="buy-sell-btn" onclick="window.location.href='SignUpPage.php'">Sell</button>
+      <button class="buy-sell-btn" onclick="window.location.href='buyerpage.php'">Buy</button>
+      <button class="buy-sell-btn" onclick="window.location.href='SellerPage.php'">Sell</button>
 </div>
   </div>
 </div>
