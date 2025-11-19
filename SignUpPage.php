@@ -5,6 +5,13 @@ $errors = $_SESSION['flash_errors'] ?? [];
 $success = $_SESSION['flash_success'] ?? null;
 $old = $_SESSION['old'] ?? [];
 unset($_SESSION['flash_errors'], $_SESSION['flash_success'], $_SESSION['old']);
+
+if (isset($_SESSION['user_id'])) {
+    // User is already logged in
+    header("Location: buyerpage.php");
+    exit;
+}
+
 ?>
 
   <!-- Main Container -->
